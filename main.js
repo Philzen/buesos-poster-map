@@ -1,4 +1,4 @@
-fetch('/data/kommunalwahlbezirke_2023.geojson', {
+fetch('./data/kommunalwahlbezirke_2023.geojson', {
     method: 'GET'
 })
 .then((response) => {
@@ -12,7 +12,7 @@ fetch('/data/kommunalwahlbezirke_2023.geojson', {
 })
 
 
-fetch('/data/poster_buesos.geojson', {
+fetch('./data/poster_buesos.geojson', {
     method: 'GET'
 })
 .then((response) => {
@@ -96,7 +96,7 @@ function onMapClick(evt) {
     imageElement.onload = () => detailBox.appendChild(imageElement)
     imageElement.onerror = () => { titleSource.textContent += ' (kein Bild verfügbar)' }
     imageElement.classList.add('p-3')
-    imageElement.setAttribute('src', `/static/${imageId}.jpg?t=${Math.floor(Date.now() / 1000)}`)
+    imageElement.setAttribute('src', `./static/${imageId}.jpg?t=${Math.floor(Date.now() / 1000)}`)
     imageElement.setAttribute('target', '_blank')
 
     evt.preventDefault
